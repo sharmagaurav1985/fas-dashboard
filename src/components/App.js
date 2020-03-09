@@ -2,21 +2,22 @@ import React from "react";
 import HomePage from "../components/HomePage";
 import AboutPage from "../components/AboutPage";
 import Header from "./common/Header";
-import NumberOfClients from "./NumberOfClients";
 import Courses from "./Courses";
+import { Route, Switch } from "react-router-dom";
+import NotFoundPage from "./common/NotFoundPage";
+import ManageCourse from "./ManageCourse";
 
 function App() {
-  function getPage() {
-    const route = window.location.pathname;
-    if (route === "/about") return <AboutPage />;
-    if (route === "/courses") return <Courses />;
-    if (route === "/numberOfClients") return <NumberOfClients />;
-    else return <HomePage />;
-  }
   return (
     <div>
       <Header />
-      {getPage()}
+      <Switch>
+        <Route path="/" exact component={HomePage} />
+        <Route path="/courses" component={Courses} />
+        <Route path="/about" component={AboutPage} />
+        <Route path="/manageCourse" component={ManageCourse} />
+        <Route component={NotFoundPage} />
+      </Switch>
     </div>
   );
 }

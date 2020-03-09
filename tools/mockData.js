@@ -47,11 +47,23 @@ const funds = {
   funds: [
     {
       fundId: 1,
-      fundName: "Sample Fund 1"
+      fundName: "Sample Fund 1",
+      StartingYear: 2019
+    },
+    {
+      fundId: 3,
+      fundName: "Sample Fund 3",
+      StartingYear: 2019
     },
     {
       fundId: 2,
-      fundName: "Sample Fund 2"
+      fundName: "Sample Fund 2",
+      StartingYear: 2017
+    },
+    {
+      fundId: 4,
+      fundName: "Sample Fund 4",
+      StartingYear: 2016
     }
   ]
 };

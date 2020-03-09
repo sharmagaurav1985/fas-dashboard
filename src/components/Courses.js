@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getCourses } from "../api/courseApi";
-
+import CourseList from "./CourseList";
+import { Link } from "react-router-dom";
 function Courses() {
   const [courses, setCourses] = useState([]);
 
@@ -9,26 +10,12 @@ function Courses() {
   }, []);
 
   return (
-    <div>
-      <table className="table">
-        <thead>
-          <th>Title</th>
-          <th>Author ID</th>
-          <th>Category</th>
-        </thead>
-        <tbody>
-          {courses.map(x => {
-            return (
-              <tr>
-                <td>{x.title}</td>
-                <td>{x.authorId}</td>
-                <td>{x.category}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    </div>
+    <>
+      <Link to="/manageCourse" className="btn btn-primary">
+        Add Course
+      </Link>
+      <CourseList courses={courses} />
+    </>
   );
 }
 
