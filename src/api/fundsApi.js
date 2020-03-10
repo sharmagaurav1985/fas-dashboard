@@ -26,9 +26,11 @@ function yearWiseJson(res) {
 }
 
 export function getYearWiseFunds() {
-  return fetch(baseUrl)
-    .then(handleResponse)
-    .then(reduceByYear)
-    .then(yearWiseJson)
-    .catch(handleError);
+  return (
+    fetch(baseUrl)
+      .then(handleResponse)
+      .then(reduceByYear)
+      //.then(yearWiseJson)
+      .catch(handleError)
+  );
 }

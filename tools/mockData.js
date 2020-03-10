@@ -3,42 +3,141 @@ const clients = {
     {
       clientId: 1,
       clientName: "Sample Client 1",
-      StartingYear: 2016
+      StartingYear: 2016,
+      IsActive: true
     },
+    {
+      clientId: 1,
+      clientName: "Sample Client 1",
+      StartingYear: 2016,
+      IsActive: true
+    },
+    {
+      clientId: 1,
+      clientName: "Sample Client 1",
+      StartingYear: 2016,
+      IsActive: true
+    },
+    {
+      clientId: 1,
+      clientName: "Sample Client 1",
+      StartingYear: 2016,
+      IsActive: true
+    },
+    {
+      clientId: 1,
+      clientName: "Sample Client 1",
+      StartingYear: 2016,
+      IsActive: true
+    },
+    {
+      clientId: 1,
+      clientName: "Sample Client 1",
+      StartingYear: 2016,
+      IsActive: true
+    },
+    {
+      clientId: 1,
+      clientName: "Sample Client 1",
+      StartingYear: 2016,
+      IsActive: true
+    },
+    {
+      clientId: 1,
+      clientName: "Sample Client 1",
+      StartingYear: 2016,
+      IsActive: true
+    },
+    {
+      clientId: 1,
+      clientName: "Sample Client 1",
+      StartingYear: 2016,
+      IsActive: true
+    },
+    {
+      clientId: 1,
+      clientName: "Sample Client 1",
+      StartingYear: 2016,
+      IsActive: true
+    },
+    {
+      clientId: 1,
+      clientName: "Sample Client 1",
+      StartingYear: 2016,
+      IsActive: true
+    },
+    {
+      clientId: 1,
+      clientName: "Sample Client 1",
+      StartingYear: 2016,
+      IsActive: true
+    },
+    {
+      clientId: 1,
+      clientName: "Sample Client 1",
+      StartingYear: 2016,
+      IsActive: true
+    },
+    {
+      clientId: 1,
+      clientName: "Sample Client 1",
+      StartingYear: 2016,
+      IsActive: true
+    },
+    {
+      clientId: 1,
+      clientName: "Sample Client 1",
+      StartingYear: 2016,
+      IsActive: true
+    },
+    {
+      clientId: 1,
+      clientName: "Sample Client 1",
+      StartingYear: 2016,
+      IsActive: true
+    },
+
     {
       clientId: 2,
       ClientName: "Sample Client 2",
-      StartingYear: 2016
+      StartingYear: 2016,
+      IsActive: true
     },
     {
       clientId: 3,
       clientName: "Sample Client 3",
-      StartingYear: 2017
+      StartingYear: 2017,
+      IsActive: false
     },
     {
       clientId: 4,
       ClientName: "Sample Client 4",
-      StartingYear: 2016
+      StartingYear: 2016,
+      IsActive: false
     },
     {
       clientId: 5,
       clientName: "Sample Client 5",
-      StartingYear: 2017
+      StartingYear: 2017,
+      IsActive: true
     },
     {
       clientId: 6,
       ClientName: "Sample Client 6",
-      StartingYear: 2019
+      StartingYear: 2019,
+      IsActive: true
     },
     {
       clientId: 7,
       clientName: "Sample Client 7",
-      StartingYear: 2019
+      StartingYear: 2019,
+      IsActive: true
     },
     {
       clientId: 8,
       ClientName: "Sample Client 8",
-      StartingYear: 2019
+      StartingYear: 2019,
+      IsActive: true
     }
   ]
 };
@@ -47,11 +146,56 @@ const funds = {
   funds: [
     {
       fundId: 1,
-      fundName: "Sample Fund 1"
+      fundName: "Sample Fund 1",
+      StartingYear: 2019,
+      IsActive: true
+    },
+    {
+      fundId: 3,
+      fundName: "Sample Fund 3",
+      StartingYear: 2019,
+      IsActive: true
     },
     {
       fundId: 2,
-      fundName: "Sample Fund 2"
+      fundName: "Sample Fund 2",
+      StartingYear: 2017,
+      IsActive: true
+    },
+    {
+      fundId: 4,
+      fundName: "Sample Fund 4",
+      StartingYear: 2016,
+      IsActive: true
+    }
+  ]
+};
+
+const fundGenerationDuration = {
+  fundGenerationDuration: [
+    {
+      fundId: 1,
+      fundName: "Sample Fund 1",
+      generationDate: "03/10/2020",
+      dataGeneratedForDays: 10
+    },
+    {
+      fundId: 1,
+      fundName: "Sample Fund 1",
+      generationDate: "03/09/2020",
+      dataGeneratedForDays: 100
+    },
+    {
+      fundId: 2,
+      fundName: "Sample Fund 2",
+      generationDate: "03/10/2020",
+      dataGeneratedForDays: 15
+    },
+    {
+      fundId: 4,
+      fundName: "Sample Fund 4",
+      generationDate: "03/09/2020",
+      dataGeneratedForDays: 13
     }
   ]
 };
@@ -146,6 +290,7 @@ const newCourse = {
 module.exports = {
   clients,
   funds,
+  fundGenerationDuration,
   newCourse,
   courses,
   authors
