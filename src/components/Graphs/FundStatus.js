@@ -1,36 +1,36 @@
 import React, { useState, useEffect } from "react";
-import { getGetActiveInActiveClients, getClients } from "../../api/clientsApi";
+import { getFunds } from "../../api/fundsApi";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
-function ClientStatus() {
-  const [clients, setClients] = useState([]);
+function Fundstatus() {
+  const [Funds, setFunds] = useState([]);
 
   useEffect(() => {
-    getClients().then(res => setClients({ res }));
+    getFunds().then(res => setFunds({ res }));
   }, []);
 
-  let totalClients = 0;
-  let totalActiveClients = 0;
-  if (clients.hasOwnProperty("res") && Object.keys(clients.res).length > 0) {
-    let indxes = Object.keys(clients.res.clients);
+  let totalFunds = 0;
+  let totalActiveFunds = 0;
+  if (Funds.hasOwnProperty("res") && Object.keys(Funds.res).length > 0) {
+    let indxes = Object.keys(Funds.res.funds);
     for (let i = 0; i < indxes.length; i++) {
-      totalClients += 1;
-      let clientKeys = Object.keys(clients.res.clients[i]);
-      for (let j = 0; j < clientKeys.length; j++) {
+      totalFunds += 1;
+      let fundKeys = Object.keys(Funds.res.funds[i]);
+      for (let j = 0; j < fundKeys.length; j++) {
         if (
-          clientKeys[j] === "IsActive" &&
-          clients.res.clients[i].IsActive === true
+          fundKeys[j] === "IsActive" &&
+          Funds.res.funds[i].IsActive === true
         ) {
-          totalActiveClients += 1;
+          totalActiveFunds += 1;
         }
       }
     }
   }
 
   let chartData = [
-    { name: "Active", y: totalActiveClients },
-    { name: "InActive", y: totalClients - totalActiveClients }
+    { name: "Active", y: totalActiveFunds },
+    { name: "InActive", y: totalFunds - totalActiveFunds }
   ];
 
   const options = {
@@ -52,7 +52,7 @@ function ClientStatus() {
       }
     },
     title: {
-      text: "Active Clients"
+      text: "Active Funds"
     },
     series: [
       {
@@ -67,4 +67,4 @@ function ClientStatus() {
   );
 }
 
-export default ClientStatus;
+export default Fundstatus;

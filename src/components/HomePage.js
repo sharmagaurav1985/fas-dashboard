@@ -1,6 +1,7 @@
 import React from "react";
 import YearWiseNumberOfClients from "./Graphs/YearWiseNumberOfClients";
 import ClientStatus from "./Graphs/ClientStatus";
+import Fundstatus from "./Graphs/FundStatus";
 
 function HomePage() {
   return (
@@ -9,17 +10,18 @@ function HomePage() {
         <div class="col-sm" key="11">
           <YearWiseNumberOfClients />
         </div>
-        <div class="col-sm" key="12">
+        <div class="col-sm" key="12" style={{ height: 100 }}>
           <ClientStatus />
         </div>
         <div class="col-sm" key="13">
-          One of three columns
+          <Fundstatus />
+        </div>
+        <div class="col-sm" key="13">
+          <Fundstatus />
         </div>
       </div>
       <div class="row" key="2">
-        <div class="col-sm" key="21">
-          Two of three columns
-        </div>
+        <div class="col-sm" key="21"></div>
         <div class="col-sm" key="22">
           Two of three columns
         </div>

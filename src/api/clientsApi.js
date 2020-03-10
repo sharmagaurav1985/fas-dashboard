@@ -32,3 +32,14 @@ export function getYearWiseClients() {
     .then(yearWiseJson)
     .catch(handleError);
 }
+
+function getStatusWiseClients(res) {
+  return res;
+}
+
+export function getGetActiveInActiveClients() {
+  return fetch(baseUrl)
+    .then(handleResponse)
+    .then(getStatusWiseClients)
+    .catch(handleError);
+}

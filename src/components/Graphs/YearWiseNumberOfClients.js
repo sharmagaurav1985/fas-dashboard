@@ -5,8 +5,8 @@ import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
 function YearWiseNumberOfClients() {
-  const [clients, setClients] = useState({});
-  const [funds, setFunds] = useState({});
+  const [clients, setClients] = useState([]);
+  const [funds, setFunds] = useState([]);
 
   useEffect(() => {
     getYearWiseFunds().then(res => setFunds({ res }));
@@ -16,20 +16,36 @@ function YearWiseNumberOfClients() {
   let xAxisCategory = [];
   let clientData = [];
   let fundData = [];
+  let minYear = 2025;
+  let maxYear = new Date().getFullYear();
   if (clients.hasOwnProperty("res") && Object.keys(clients.res).length > 0) {
-    Object.keys(clients.res).forEach(function(key, index) {
-      xAxisCategory.push(key);
-      clientData.push(clients.res[key]);
-      if (key in funds.res) {
-        fundData.push(funds.res[key]);
-      } else {
-        fundData.push("0");
-      }
-    });
+    const _minYear = fundData.reduce((p, c) => {
+      if (c.StartingYear < minYear) {
+        return c.StartingYear;
+      } else return minYear;
+    }, 0);
+
+    console.log(_minYear);
+
+    let clientKeys = Object.keys(clients.res);
+    for (let i = 0; i < clientKeys.length; i++) {
+      xAxisCategory.push(clients.res[i][0]);
+      clientData.push(clients.res[i][1]);
+      //fundData.push(clients.res[i][0]);
+      fundData.push(funds.res[clients.res[i][0]] || "0");
+    }
   }
+
   const options = {
     chart: {
-      type: "line"
+      renderTo: "11",
+      type: "line",
+      borderColor: "#bdb5b1",
+      borderWidth: 2,
+      style: {
+        color: "#1a1817",
+        fontFamily: "sans-serif"
+      }
     },
     xAxis: {
       categories: xAxisCategory,
@@ -72,7 +88,7 @@ function YearWiseNumberOfClients() {
       }
     },
     title: {
-      text: "Year Wise Client Started"
+      text: "Year Wise Client and Fund Started"
     },
     series: [
       {
