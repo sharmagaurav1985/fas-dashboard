@@ -40,8 +40,9 @@ function YearWiseNumberOfClients() {
     chart: {
       renderTo: "11",
       type: "line",
-      borderColor: "#bdb5b1",
-      borderWidth: 2,
+
+      //borderColor: "#bdb5b1",
+      //borderWidth: 2,
       style: {
         color: "#1a1817",
         fontFamily: "sans-serif"

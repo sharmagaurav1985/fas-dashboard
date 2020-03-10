@@ -37,8 +37,8 @@ function Fundstatus() {
     chart: {
       renderTo: "container",
       type: "pie",
-      borderColor: "#bdb5b1",
-      borderWidth: 2,
+      //borderColor: "#bdb5b1",
+      //borderWidth: 2,
       height: 300,
       style: {
         color: "#1a1817",
@@ -52,7 +52,7 @@ function Fundstatus() {
       }
     },
     title: {
-      text: "Active Funds"
+      text: "Active/InActive Funds"
     },
     series: [
       {

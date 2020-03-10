@@ -171,6 +171,35 @@ const funds = {
   ]
 };
 
+const fundGenerationDuration = {
+  fundGenerationDuration: [
+    {
+      fundId: 1,
+      fundName: "Sample Fund 1",
+      generationDate: "03/10/2020",
+      dataGeneratedForDays: 10
+    },
+    {
+      fundId: 1,
+      fundName: "Sample Fund 1",
+      generationDate: "03/09/2020",
+      dataGeneratedForDays: 100
+    },
+    {
+      fundId: 2,
+      fundName: "Sample Fund 2",
+      generationDate: "03/10/2020",
+      dataGeneratedForDays: 15
+    },
+    {
+      fundId: 4,
+      fundName: "Sample Fund 4",
+      generationDate: "03/09/2020",
+      dataGeneratedForDays: 13
+    }
+  ]
+};
+
 const courses = [
   {
     id: 1,
@@ -261,6 +290,7 @@ const newCourse = {
 module.exports = {
   clients,
   funds,
+  fundGenerationDuration,
   newCourse,
   courses,
   authors
